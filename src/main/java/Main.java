@@ -5,24 +5,22 @@ public class Main {
         int n = 5; //количество столбцов
         int[][] mat = new int[m][n];
         int e = 1;
-        int m2 = m;
-        int n2= n;
         int row = 0;
         int col = 0;
         while (e < (m * n)){
-            for (int i = col; i < (n2 - col); i++) {
+            for (int i = col; i < (n - col); i++) {
                 mat[row][i] = e;
                 e++;
             }
-            for (int i = (row + 1); i < (m2 - row); i++) {
-                mat[i][n2 - col - 1] = e;
+            for (int i = (row + 1); i < (m - row); i++) {
+                mat[i][n - col - 1] = e;
                 e++;
             }
-            for (int i = (n2 - (col + 2)); i >= col; i--) {
-                mat[m2 - row - 1][i] = e;
+            for (int i = (n - (col + 2)); i >= col; i--) {
+                mat[m - row - 1][i] = e;
                 e++;
             }
-            for (int i = (m2 - (row + 2)); i >= (row + 1); i--) {
+            for (int i = (m - (row + 2)); i >= (row + 1); i--) {
                 mat[i][col] = e;
                 e++;
             }
